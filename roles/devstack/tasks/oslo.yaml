@@ -1,0 +1,20 @@
+
+- name: install_oslo() - Collect source and prepare 
+  git: repo="{{ item.repo }}" dest="{{ item.dest }}" version="{{ item.version }}" accept_hostkey=yes
+  with_items:
+      - { repo: "{{ cliff_repo }}", dest: "{{ dest }}/cliff", version: "{{ cliff_branch }}" }
+      - { repo: "{{ oslo_i18n_repo }}", dest: "{{ dest }}/oslo.config", version: "{{ oslo_i18n_branch }}" }
+      - { repo: "{{ oslo_utils_repo }}", dest: "{{ dest }}/oslo.utils", version: "{{ oslo_utils_branch }}" }
+      - { repo: "{{ oslo_serialization_repo }}", dest: "{{ dest }}/oslo.serialization", version: "{{ oslo_serialization_branch }}" }
+      - { repo: "{{ oslo_config_repo }}", dest: "{{ dest }}/oslo.config", version: "{{ oslo_config_branch }}" }
+      - { repo: "{{ oslo_concurrency_repo }}", dest: "{{ dest }}/oslo.concurrency", version: "{{ oslo_concurrency_branch }}" }
+      - { repo: "{{ oslo_log_repo }}", dest: "{{ dest }}/oslo.log", version: "{{ oslo_log_branch }}" }
+      - { repo: "{{ oslo_middleware_repo }}", dest: "{{ dest }}/oslo.middleware", version: "{{ oslo_middleware_branch }}" }
+      - { repo: "{{ oslo_messaging_repo }}", dest: "{{ dest }}/oslo.messaging", version: "{{ oslo_messaging_branch }}" }
+      - { repo: "{{ oslo_rootwrap_repo }}", dest: "{{ dest }}/oslo.rootwrap", version: "{{ oslo_rootwrap_branch }}" }
+      - { repo: "{{ oslo_db_repo }}", dest: "{{ dest }}/oslo.db", version: "{{ oslo_db_branch }}" }
+      - { repo: "{{ oslo_vmware_repo }}", dest: "{{ dest }}/oslo.vmware", version: "{{ oslo_vmware_branch }}" }
+      - { repo: "{{ pycadf_repo }}", dest: "{{ dest }}/pycadf", version: "{{ pycadf_branch }}" }
+      - { repo: "{{ stevedore_repo }}", dest: "{{ dest }}/stevedore", version: "{{ stevedore_branch }}" }
+      - { repo: "{{ taskflow_repo }}", dest: "{{ dest }}/taskflow", version: "{{ taskflow_branch }}" }
+

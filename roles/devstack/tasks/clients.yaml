@@ -1,0 +1,33 @@
+
+- name: Install clients libraries 
+  git: repo="{{ item.repo }}" dest="{{ item.dest }}" version="{{ item.version }}" accept_hostkey=yes
+  with_items:
+      - { repo: "{{ python_keystoneclient_repo }}", dest: "{{ dest }}/python-keystoneclient", version: "{{ python_keystoneclient_branch }}" }
+      - { repo: "{{ python_glanceclient_repo }}", dest: "{{ dest }}/python-glanceclient", version: "{{ python_glanceclient_branch }}" }
+      - { repo: "{{ python_cinderclient_repo }}", dest: "{{ dest }}/python-cinderclient", version: "{{ python_cinderclient_branch }}" }
+      - { repo: "{{ python_novaclient_repo }}", dest: "{{ dest }}/python-novaclient", version: "{{ python_novaclient_branch }}" }
+
+- name: install_swiftclient() - Collect source and prepare
+  git: 
+    repo: "{{ python_swiftclient_repo }}"
+    dest: "{{ dest }}/python-swiftclient"
+    version: "{{ python_swiftclient_branch }}"
+    accept_hostkey: yes
+#  when: is_service_enabled swift glance horizon
+
+- name: install_neutronclient() - Collect source and prepare
+  git:
+    repo: "{{ python_neutronclient_repo }}"
+    dest: "{{ dest }}/python-neutronclient"
+    version: "{{ python_neutronclient_branch }}"
+    accept_hostkey: yes
+#  when: is_service_enabled neutron nova horizon
+
+- name: install_heatclient() - Collect source and prepare
+  git:
+    repo: "{{ python_heatclient_repo }}"
+    dest: "{{ dest }}/python-heatclient"
+    version: "{{ python_heatclient_branch }}"
+    accept_hostkey: yes
+#  when: is_service_enabled heat horizon
+

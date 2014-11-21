@@ -1,0 +1,27 @@
+---
+# Install required infra support libraries
+- include: infra.yaml
+
+# Install oslo libraries that have graduated
+- include: oslo.yaml
+
+# Install stackforge libraries for testing
+#- include: stackforge.yaml
+#  when: stackforge_libs
+
+# Install clients libraries
+- include: clients.yaml
+
+# Install middleware
+
+#- include: keystone.yaml
+
+#- include: swift.yaml
+
+#- include: glance.yaml
+
+#- include: cinder.yaml
+
+#- include: neutron.yaml
+
+#- include: nova.yaml

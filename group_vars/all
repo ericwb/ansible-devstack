@@ -1,0 +1,5 @@
+---
+
+dest: "{{ ansible_env.DEST | default('/opt/stack') }}"
+
+git_base: "{{ ansible_env.GIT_BASE | default('git://git.openstack.org') }}"

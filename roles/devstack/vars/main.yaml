@@ -1,0 +1,120 @@
+
+##############
+#
+# Testing Components
+#
+##############
+
+requirements_repo: "{{ git_base }}/openstack/requirements.git"
+requirements_branch: "{{ ansible_env.REQUIREMENTS_BRANCH | default('master') }}"
+requirements_dir: "{{ dest }}/requirements"
+
+##############
+#
+# OpenStack Client Library Componets
+#
+##############
+
+# python keystone client library to nova that horizon uses 
+python_keystoneclient_repo: "{{ ansible_env.KEYSTONECLIENT_REPO | default('{{ git_base }}/openstack/python-keystoneclient.git') }}"
+python_keystoneclient_branch: "{{ ansible_env.KEYSTONECLIENT_BRANCH | default('master') }}"
+
+# python glance client library
+python_glanceclient_repo: "{{ ansible_env.GLANCECLIENT_REPO | default('{{ git_base }}/openstack/python-glanceclient.git') }}"
+python_glanceclient_branch: "{{ ansible_env.GLANCECLIENT_BRANCH | default('master') }}"
+
+# volume client
+python_cinderclient_repo: "{{ ansible_env.CINDERCLIENT_REPO | default('{{ git_base }}/openstack/python-cinderclient.git') }}"
+python_cinderclient_branch: "{{ ansible_env.CINDERCLIENT_BRANCH | default('master') }}"
+
+# python client library to nova that horizon (and others) use
+python_novaclient_repo: "{{ ansible_env.NOVACLIENT_REPO | default('{{ git_base }}/openstack/python-novaclient.git') }}"
+python_novaclient_branch: "{{ ansible_env.NOVACLIENT_BRANCH | default('master') }}"
+
+# python swift client library
+python_swiftclient_repo: "{{ ansible_env.SWIFTCLIENT_REPO | default('{{ git_base }}/openstack/python-swiftclient.git') }}"
+python_swiftclient_branch: "{{ ansible_env.SWIFTCLIENT_BRANCH | default('master') }}"
+
+# neutron client
+python_neutronclient_repo: "{{ ansible_env.NEUTRONCLIENT_REPO | default('{{ git_base }}/openstack/python-neutronclient.git') }}"
+python_neutronclient_branch: "{{ ansible_env.NEUTRONCLIENT_BRANCH | default('master') }}"
+
+# python heat client library
+python_heatclient_repo: "{{ ansible_env.HEATCLIENT_REPO | default('{{ git_base }}/openstack/python-heatclient.git') }}"
+python_heatclient_branch: "{{ ansible_env.HEATCLIENT_BRANCH | default('master') }}"
+
+###################
+#
+# Oslo Libraries
+#
+###################
+
+# cliff command line framework
+cliff_repo: "{{ ansible_env.CLIFF_REPO | default('{{ git_base }}/openstack/cliff.git') }}"
+cliff_branch: "{{ ansible_env.CLIFF_BRANCH | default('master') }}"
+
+# oslo.concurrency
+oslo_concurrency_repo: "{{ ansible_env.OSLOCON_REPO | default('{{ git_base }}/openstack/oslo.concurrency.git') }}"
+oslo_concurrency_branch: "{{ ansible_env.OSLOCON_BRANCH | default('master') }}"
+
+# oslo.config
+oslo_config_repo: "{{ ansible_env.OSLOCFG_REPO | default('{{ git_base }}/openstack/oslo.config.git') }}"
+oslo_config_branch: "{{ ansible_env.OSLOCFG_BRANCH | default('master') }}"
+
+# oslo.context
+oslo_context_repo: "{{ ansible_env.OSLOCTX_REPO | default('{{ git_base }}/openstack/oslo.context.git') }}"
+oslo_context_branch: "{{ ansible_env.OSLOCTX_BRANCH | default('master') }}"
+
+# oslo.db
+oslo_db_repo: "{{ ansible_env.OSLODB_REPO | default('{{ git_base }}/openstack/oslo.db.git') }}"
+oslo_db_branch: "{{ ansible_env.OSLODB_BRANCH | default('master') }}"
+
+# oslo.i18n
+oslo_i18n_repo: "{{ ansible_env.OSLOI18N_REPO | default('{{ git_base }}/openstack/oslo.i18n.git') }}"
+oslo_i18n_branch: "{{ ansible_env.OSLOI18N_BRANCH | default('master') }}"
+
+# oslo.log
+oslo_log_repo: "{{ ansible_env.OSLOLOG_REPO | default('{{ git_base }}/openstack/oslo.log.git') }}"
+oslo_log_branch: "{{ ansible_env.OSLOLOG_BRANCH | default('master') }}"
+
+# oslo.messaging
+oslo_messaging_repo: "{{ ansible_env.OSLOMSG_REPO | default('{{ git_base }}/openstack/oslo.messaging.git') }}"
+oslo_messaging_branch: "{{ ansible_env.OSLOMSG_BRANCH | default('master') }}"
+
+# oslo.middleware
+oslo_middleware_repo: "{{ ansible_env.OSLOMID_REPO | default('{{ git_base }}/openstack/oslo.middleware.git')
+ }}"
+oslo_middleware_branch: "{{ ansible_env.OSLOMID_BRANCH | default('master') }}"
+
+# oslo.rootwrap
+oslo_rootwrap_repo: "{{ ansible_env.OSLORWRAP_REPO | default('{{ git_base }}/openstack/oslo.rootwrap.git') }}"
+oslo_rootwrap_branch: "{{ ansible_env.OSLORWRAP_BRANCH | default('master') }}"
+
+# oslo.serialization
+oslo_serialization_repo: "{{ ansible_env.OSLOSERIALIZATION_REPO | default('{{ git_base }}/openstack/oslo.serialization.git') }}"
+oslo_serialization_branch: "{{ ansible_env.OSLOSERIALIZATION_BRANCH | default('master') }}"
+
+# oslo.utils
+oslo_utils_repo: "{{ ansible_env.OSLOUTILS_REPO | default('{{ git_base }}/openstack/oslo.utils.git') }}"
+oslo_utils_branch: "{{ ansible_env.OSLOUTILS_BRANCH | default('master') }}"
+
+# oslo.vmware
+oslo_vmware_repo: "{{ ansible_env.OSLOVMWARE_REPO | default('{{ git_base }}/openstack/oslo.vmware.git') }}"
+oslo_vmware_branch: "{{ ansible_env.OSLOVMWARE_BRANCH | default('master') }}"
+
+# pycadf auditing library
+pycadf_repo: "{{ ansible_env.PYCADF_REPO | default('{{ git_base }}/openstack/pycadf.git') }}"
+pycadf_branch: "{{ ansible_env.PYCADF_BRANCH | default('master') }}"
+
+# stevedore plugin manager
+stevedore_repo: "{{ ansible_env.STEVEDORE_REPO | default('{{ git_base }}/openstack/stevedore.git') }}"
+stevedore_branch: "{{ ansible_env.STEVEDORE_BRANCH | default('master') }}"
+
+# taskflow plugin manager
+taskflow_repo: "{{ ansible_env.TASKFLOW_REPO | default('{{ git_base }}/openstack/taskflow.git') }}"
+taskflow_branch: "{{ ansible_env.TASKFLOW_BRANCH | default('master') }}"
+
+# pbr drives the setuptools configs
+pbr_repo: "{{ ansible_env.PBR_REPO | default('{{ git_base }}/openstack-dev/pbr.git') }}"
+pbr_branch: "{{ ansible_env.PBR_BRANCH | default('master') }}"
+
